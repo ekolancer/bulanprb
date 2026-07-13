@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../sections/Hero';
+import { Countdown } from '../sections/Countdown';
 import { GerakanPRB } from '../sections/GerakanPRB';
 import { PuncakPeringatan } from '../sections/PuncakPeringatan';
 import { RoadToPRB } from '../sections/RoadToPRB';
@@ -17,6 +18,7 @@ export const LandingPage = () => {
   return (
     <>
       <Hero />
+      <Countdown />
       <motion.div variants={pageVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-100px' }}>
         <GerakanPRB />
       </motion.div>
