@@ -3,24 +3,25 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Building } from 'lucide-react';
 import { pembicara } from '../data';
 
-const SpeakerCard = ({ speaker, delay }) => (
-  <motion.div
+const SpeakerCard = ({ speaker, delay = 0 }) => (
+  <motion.article
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-40px' }}
-    transition={{ duration: 0.4, delay }}
-    className="bg-white rounded-3xl shadow-soft border border-gray-100/60 overflow-hidden flex flex-col hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-300 h-full"
+    transition={{ duration: 0.45, delay }}
+    className="bg-white rounded-3xl shadow-soft border border-slate-100/80 overflow-hidden flex flex-col
+               hover:shadow-soft-hover hover:-translate-y-0.5 transition-all duration-300 h-full"
   >
     {/* Photo */}
-    <div className="aspect-[4/3] overflow-hidden relative bg-gray-50">
+    <div className="aspect-[4/3] overflow-hidden relative bg-slate-50">
       <img
         src={speaker.photo}
-        alt={speaker.name}
+        alt={`Foto ${speaker.name}`}
         loading="lazy"
-        className="w-full h-full object-cover object-top"
+        className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-[1.04]"
       />
       {/* Day badge */}
-      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xxs font-bold text-primary shadow-soft">
+      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/92 backdrop-blur-sm text-[10px] font-bold text-primary shadow-soft">
         {speaker.day}
       </span>
     </div>
@@ -28,33 +29,33 @@ const SpeakerCard = ({ speaker, delay }) => (
     {/* Content */}
     <div className="p-5 flex flex-col gap-3 flex-1">
       {/* Institution */}
-      <div className="flex items-center gap-1.5 text-xxs font-bold text-accent-orange uppercase tracking-wider">
-        <Building className="w-3 h-3 shrink-0" />
+      <div className="flex items-center gap-1.5 text-[10px] font-bold text-accent-orange uppercase tracking-wider">
+        <Building className="w-3 h-3 shrink-0" aria-hidden="true" />
         {speaker.institution}
       </div>
 
       {/* Name & title */}
       <div>
-        <h4 className="text-base font-extrabold text-text-primary leading-snug">{speaker.name}</h4>
+        <h3 className="text-base font-extrabold text-text-primary leading-snug tracking-tight">{speaker.name}</h3>
         <p className="text-xs text-text-secondary font-medium mt-0.5">{speaker.title}</p>
       </div>
 
       {/* Bio */}
       <p className="text-xs text-text-secondary leading-relaxed flex-1 line-clamp-3">{speaker.bio}</p>
 
-      {/* Topic tags */}
-      <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-50">
+      {/* Topics */}
+      <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-slate-50">
         {speaker.topics.map((tag) => (
           <span
             key={tag}
-            className="px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xxs font-bold"
+            className="px-2.5 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold"
           >
             {tag}
           </span>
         ))}
       </div>
     </div>
-  </motion.div>
+  </motion.article>
 );
 
 export const PembicaraUtama = () => {
@@ -67,7 +68,11 @@ export const PembicaraUtama = () => {
   };
 
   return (
-    <section id="pembicara" className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section
+      id="pembicara"
+      aria-label="Pembicara utama Bulan PRB 2026"
+      className="py-16 sm:py-20 lg:py-24 bg-white"
+    >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header + arrows */}
@@ -79,56 +84,59 @@ export const PembicaraUtama = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-2"
           >
-            <span className="text-xs font-bold text-primary uppercase tracking-widest">Narasumber</span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary">
-              Pembicara Utama
+            <span className="section-label text-primary">Narasumber</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary tracking-tight">
+              Pembicara utama
             </h2>
             <p className="text-text-secondary text-sm leading-relaxed max-w-lg">
-              Para ahli kebencanaan, praktisi lapangan, dan pakar internasional yang akan berbagi ilmu di Bulan PRB 2025.
+              Para ahli kebencanaan, praktisi lapangan, dan pakar internasional yang akan berbagi ilmu di Bulan PRB 2026.
             </p>
           </motion.div>
 
-          <div className="hidden sm:flex items-center gap-2 shrink-0">
+          {/* Arrow controls */}
+          <div className="hidden sm:flex items-center gap-2 shrink-0" aria-label="Navigasi pembicara">
             <button
               onClick={() => scrollBy(-1)}
-              aria-label="Sebelumnya"
-              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-gray-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 transition-colors"
+              aria-label="Pembicara sebelumnya"
+              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 hover:-translate-y-px transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
             </button>
             <button
               onClick={() => scrollBy(1)}
-              aria-label="Berikutnya"
-              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-gray-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 transition-colors"
+              aria-label="Pembicara berikutnya"
+              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 hover:-translate-y-px transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
         </div>
 
-        {/* Scroll carousel — on mobile; auto grid on lg+ */}
         {/* Mobile/tablet: horizontal scroll */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth lg:hidden
-            [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth lg:hidden no-scrollbar"
+          role="list"
+          aria-label="Daftar pembicara"
         >
-          {pembicara.map((spk, i) => (
-            <div key={spk.id} className="snap-start shrink-0 w-64 sm:w-72">
+          {pembicara.map((spk) => (
+            <div key={spk.id} role="listitem" className="snap-start shrink-0 w-64 sm:w-72">
               <SpeakerCard speaker={spk} delay={0} />
             </div>
           ))}
         </div>
 
-        {/* Desktop: 3-col grid */}
-        <div className="hidden lg:grid grid-cols-3 gap-6">
+        {/* Desktop: 3-column grid */}
+        <div className="hidden lg:grid grid-cols-3 gap-6" role="list" aria-label="Daftar pembicara">
           {pembicara.map((spk, i) => (
-            <SpeakerCard key={spk.id} speaker={spk} delay={i * 0.07} />
+            <div key={spk.id} role="listitem">
+              <SpeakerCard speaker={spk} delay={i * 0.08} />
+            </div>
           ))}
         </div>
 
-        <p className="lg:hidden text-center text-xxs text-text-secondary mt-3 font-medium">
-          ← Geser untuk melihat semua pembicara →
+        <p className="lg:hidden text-center text-[10px] text-text-secondary mt-4 font-medium">
+          Geser untuk melihat semua pembicara
         </p>
 
       </div>
