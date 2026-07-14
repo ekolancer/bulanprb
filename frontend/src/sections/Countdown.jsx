@@ -145,9 +145,6 @@ export const Countdown = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight tracking-tight">
             Acara Puncak Bulan PRB 2026
           </h2>
-          <p className="mt-3 text-sm text-text-secondary font-medium max-w-md">
-            {heroConfig.eventLabel}
-          </p>
         </motion.div>
 
         {/* Main grid — info card LEFT, countdown RIGHT */}

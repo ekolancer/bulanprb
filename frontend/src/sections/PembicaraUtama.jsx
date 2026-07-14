@@ -84,7 +84,7 @@ export const PembicaraUtama = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-2"
           >
-            <span className="section-label text-primary">Narasumber</span>
+            {/* <span className="section-label text-primary">Narasumber</span> */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary tracking-tight">
               Pembicara utama
             </h2>

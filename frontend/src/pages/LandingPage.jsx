@@ -32,9 +32,9 @@ export const LandingPage = () => {
         <PRBTahunKeTahun />
       </motion.div>
       <motion.div variants={pageVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-100px' }}>
-        <FAQ />
+        <MitraSponsor />
       </motion.div>
-      <MitraSponsor />
+      <FAQ />
     </>
   );
 };

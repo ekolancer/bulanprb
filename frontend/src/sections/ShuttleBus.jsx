@@ -84,7 +84,7 @@ export const ShuttleBus = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-3 text-center max-w-xl mx-auto mb-10"
         >
-          <span className="section-label text-primary">Transportasi Gratis</span>
+          {/* <span className="section-label text-primary">Transportasi Gratis</span> */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary tracking-tight">
             Jadwal shuttle bus
           </h2>

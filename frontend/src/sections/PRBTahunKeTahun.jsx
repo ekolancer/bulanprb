@@ -68,9 +68,6 @@ export const PRBTahunKeTahun = () => {
           >
             {/* Left: Year details */}
             <div className="lg:col-span-4 flex flex-col gap-4">
-              <span className="text-xs font-bold text-accent-orange uppercase tracking-widest">
-                Tuan Rumah
-              </span>
               <div className="flex items-center gap-2 text-text-secondary text-sm font-semibold">
                 <MapPin className="w-4 h-4 text-accent-orange shrink-0" />
                 <span>{currentData.location}</span>
@@ -81,12 +78,6 @@ export const PRBTahunKeTahun = () => {
               <p className="text-text-secondary text-sm leading-relaxed">
                 {currentData.description}
               </p>
-
-              {/* Year badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 rounded-xl w-fit mt-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm font-bold text-primary">Tahun {currentData.year}</span>
-              </div>
             </div>
 
             {/* Right: Photo carousel with arrows */}

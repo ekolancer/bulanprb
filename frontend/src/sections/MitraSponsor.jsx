@@ -10,7 +10,7 @@ export const MitraSponsor = () => {
     <section
       id="mitra"
       aria-label="Mitra dan dukungan strategis Bulan PRB 2026"
-      className="py-16 sm:py-20 bg-white overflow-hidden"
+      className="py-16 sm:py-20 bg-background overflow-hidden"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mb-12">
 

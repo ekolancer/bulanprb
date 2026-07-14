@@ -99,7 +99,7 @@ export const GerakanPRB = () => {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 flex flex-col gap-5 text-left"
           >
-            <span className="section-label text-accent-orange">Program Nasional</span>
+            {/* <span className="section-label text-accent-orange">Program Nasional</span> */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight tracking-tight text-balance">
               Gerakan Nasional{' '}
               <span className="text-accent-orange">Pengurangan Risiko Bencana</span>

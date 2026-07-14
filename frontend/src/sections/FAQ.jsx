@@ -72,7 +72,7 @@ export const FAQ = () => {
     <section
       id="faq"
       aria-label="Tanya jawab Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-background"
+      className="py-16 sm:py-20 lg:py-24 bg-white"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
