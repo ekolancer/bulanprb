@@ -20,3 +20,4 @@ export * from './mitraData';
 export * from './rundownData';
 export * from './speakerData';
 export * from './akomodasiData';
+export * from './mediaCenterData';

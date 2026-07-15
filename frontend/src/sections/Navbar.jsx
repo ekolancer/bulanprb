@@ -32,6 +32,7 @@ export const Navbar = () => {
     { label: 'Beranda', href: '/' },
     { label: 'Rundown Acara', href: '/rundown' },
     { label: 'Akomodasi', href: '/akomodasi' },
+    { label: 'Media Center', href: '/media-center' },
   ];
 
   return (
