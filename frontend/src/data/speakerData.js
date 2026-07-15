@@ -60,6 +60,26 @@ export const pembicara = [
     topics: ['Kebijakan Global', 'Sendai Framework', 'Multilateral'],
     day: 'Day 1',
   },
+  {
+    id: 7,
+    name: 'Andra Firmansyah, S.T.',
+    title: 'Koordinator Logistik Kedaruratan',
+    institution: 'Badan Penanggulangan Bencana Daerah Banten',
+    photo: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=300',
+    bio: 'Mengelola rantai pasok bantuan darurat lintas kabupaten, spesialis dalam distribusi logistik pada masa tanggap darurat.',
+    topics: ['Logistik', 'Tanggap Darurat', 'Distribusi'],
+    day: 'Day 1',
+  },
+  {
+    id: 8,
+    name: 'Nadia Puspita, M.Kes.',
+    title: 'Kepala Tim Kesehatan Bencana',
+    institution: 'Dinas Kesehatan Provinsi Banten',
+    photo: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=300',
+    bio: 'Memimpin respons kesehatan darurat pasca bencana, fokus pada layanan trauma psikososial bagi penyintas.',
+    topics: ['Kesehatan', 'Trauma Healing', 'Respons Darurat'],
+    day: 'Day 3',
+  },
 ];
 
 export const sharingSessions = [

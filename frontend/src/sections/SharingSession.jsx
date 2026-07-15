@@ -22,9 +22,22 @@ export const SharingSession = () => {
     <section
       id="sharing"
       aria-label="Jadwal sharing session Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-background"
+      className="relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Subtle geometric pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <motion.div

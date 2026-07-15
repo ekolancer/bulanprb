@@ -13,10 +13,10 @@ export const RundownPage = () => (
   <>
     <RundownKegiatan />
     <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-80px' }}>
-      <PembicaraUtama />
+      <SharingSession />
     </motion.div>
     <motion.div variants={fadeInUp} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-80px' }}>
-      <SharingSession />
+      <PembicaraUtama />
     </motion.div>
   </>
 );

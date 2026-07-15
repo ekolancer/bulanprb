@@ -1,143 +1,78 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Building } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { pembicara } from '../data';
 
-const SpeakerCard = ({ speaker, delay = 0 }) => (
-  <motion.article
-    initial={{ opacity: 0, y: 20 }}
+const TeamBlock = ({ speaker, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 24 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: '-40px' }}
-    transition={{ duration: 0.45, delay }}
-    className="bg-white rounded-3xl shadow-soft border border-slate-100/80 overflow-hidden flex flex-col
-               hover:shadow-soft-hover hover:-translate-y-0.5 transition-all duration-300 h-full"
+    viewport={{ once: true, margin: '-60px' }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+    className="flex flex-col items-center text-center gap-3"
   >
-    {/* Photo */}
-    <div className="aspect-[4/3] overflow-hidden relative bg-slate-50">
+    {/* Avatar */}
+    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-1 ring-black/5 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
       <img
         src={speaker.photo}
         alt={`Foto ${speaker.name}`}
         loading="lazy"
-        className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-[1.04]"
+        className="w-full h-full object-cover object-top"
       />
-      {/* Day badge */}
-      <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/92 backdrop-blur-sm text-[10px] font-bold text-primary shadow-soft">
-        {speaker.day}
-      </span>
     </div>
 
-    {/* Content */}
-    <div className="p-5 flex flex-col gap-3 flex-1">
-      {/* Institution */}
-      <div className="flex items-center gap-1.5 text-[10px] font-bold text-accent-orange uppercase tracking-wider">
-        <Building className="w-3 h-3 shrink-0" aria-hidden="true" />
-        {speaker.institution}
-      </div>
+    {/* Role pill */}
+    <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-primary bg-primary/[0.06] ring-1 ring-primary/15">
+      {speaker.institution}
+    </span>
 
-      {/* Name & title */}
-      <div>
-        <h3 className="text-base font-extrabold text-text-primary leading-snug tracking-tight">{speaker.name}</h3>
-        <p className="text-xs text-text-secondary font-medium mt-0.5">{speaker.title}</p>
-      </div>
+    {/* Name */}
+    <h3 className="text-sm sm:text-base font-semibold text-text-primary leading-snug">
+      {speaker.name}
+    </h3>
 
-      {/* Bio */}
-      <p className="text-xs text-text-secondary leading-relaxed flex-1 line-clamp-3">{speaker.bio}</p>
-
-      {/* Topics */}
-      <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-slate-50">
-        {speaker.topics.map((tag) => (
-          <span
-            key={tag}
-            className="px-2.5 py-1 rounded-full bg-primary/5 text-primary text-[10px] font-bold"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-    </div>
-  </motion.article>
+    {/* Title */}
+    <p className="text-xs text-text-secondary font-normal leading-snug -mt-1">
+      {speaker.title}
+    </p>
+  </motion.div>
 );
 
 export const PembicaraUtama = () => {
-  const scrollRef = useRef(null);
-
-  const scrollBy = (dir) => {
-    if (!scrollRef.current) return;
-    const cardWidth = scrollRef.current.firstChild?.offsetWidth ?? 260;
-    scrollRef.current.scrollBy({ left: dir * (cardWidth + 24), behavior: 'smooth' });
-  };
-
   return (
     <section
       id="pembicara"
       aria-label="Pembicara utama Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-white"
+      className="py-24 sm:py-32 lg:py-40 bg-background"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header + arrows */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+        {/* Header row — left stack + right button, same baseline */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 sm:mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col gap-2"
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col gap-3 max-w-xl"
           >
-            {/* <span className="section-label text-primary">Narasumber</span> */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight leading-[1.1] text-balance">
               Pembicara utama
             </h2>
-            <p className="text-text-secondary text-sm leading-relaxed max-w-lg">
+            <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
               Para ahli kebencanaan, praktisi lapangan, dan pakar internasional yang akan berbagi ilmu di Bulan PRB 2026.
             </p>
           </motion.div>
+        </div>
 
-          {/* Arrow controls */}
-          <div className="hidden sm:flex items-center gap-2 shrink-0" aria-label="Navigasi pembicara">
-            <button
-              onClick={() => scrollBy(-1)}
-              aria-label="Pembicara sebelumnya"
-              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 hover:-translate-y-px transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            >
-              <ChevronLeft className="w-5 h-5" aria-hidden="true" />
-            </button>
-            <button
-              onClick={() => scrollBy(1)}
-              aria-label="Pembicara berikutnya"
-              className="w-10 h-10 rounded-xl bg-white shadow-soft border border-slate-100 flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary/20 hover:-translate-y-px transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            >
-              <ChevronRight className="w-5 h-5" aria-hidden="true" />
-            </button>
+        {/* Transparent container — 4x2 grid, no shadow/border */}
+        <div className="bg-transparent">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14 sm:gap-y-16">
+            {pembicara.map((spk, i) => (
+              <TeamBlock key={spk.id} speaker={spk} delay={(i % 4) * 0.06} />
+            ))}
           </div>
         </div>
-
-        {/* Mobile/tablet: horizontal scroll */}
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth lg:hidden no-scrollbar"
-          role="list"
-          aria-label="Daftar pembicara"
-        >
-          {pembicara.map((spk) => (
-            <div key={spk.id} role="listitem" className="snap-start shrink-0 w-64 sm:w-72">
-              <SpeakerCard speaker={spk} delay={0} />
-            </div>
-          ))}
-        </div>
-
-        {/* Desktop: 3-column grid */}
-        <div className="hidden lg:grid grid-cols-3 gap-6" role="list" aria-label="Daftar pembicara">
-          {pembicara.map((spk, i) => (
-            <div key={spk.id} role="listitem">
-              <SpeakerCard speaker={spk} delay={i * 0.08} />
-            </div>
-          ))}
-        </div>
-
-        <p className="lg:hidden text-center text-[10px] text-text-secondary mt-4 font-medium">
-          Geser untuk melihat semua pembicara
-        </p>
 
       </div>
     </section>
