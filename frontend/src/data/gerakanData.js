@@ -13,3 +13,4 @@ export const gerakanBenefits = [
 ];
 
 export const koboFormUrl = 'https://kobotoolbox.org';
+export const koboDashboardUrl = 'https://kobotoolbox.org';

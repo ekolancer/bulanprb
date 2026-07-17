@@ -79,7 +79,7 @@ export const Hero = () => {
         aria-hidden="true"
       >
         <motion.img
-          src={heroBg}
+          src="/hero_image.webp"
           alt=""
           aria-hidden="true"
           initial={{ scale: 1.06, opacity: 0 }}
@@ -108,7 +108,7 @@ export const Hero = () => {
       {/* ── Bottom fade to page background ── */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 inset-x-0 z-10 h-48 bg-gradient-to-t from-[#F4F5F7] to-transparent pointer-events-none"
+        className="absolute bottom-0 inset-x-0 z-10 h-20 bg-gradient-to-t from-[#F4F5F7] to-transparent pointer-events-none"
       />
 
       {/* ── Grain overlay (subtle texture) ── */}

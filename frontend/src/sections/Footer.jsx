@@ -30,12 +30,11 @@ export const Footer = () => {
             aria-label="Beranda Bulan PRB 2026"
             className="font-extrabold text-xl tracking-tight flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-xl w-fit"
           >
-            <span
-              className="w-10 h-10 rounded-xl bg-white text-primary flex items-center justify-center text-lg font-extrabold shrink-0"
-              aria-hidden="true"
-            >
-              B
-            </span>
+            <img
+              src="/BNPB.png"
+              alt="Logo BNPB"
+              className="w-10 h-10 object-contain shrink-0"
+            />
             Bulan PRB 2026
           </Link>
           <p className="text-white/65 text-sm leading-relaxed max-w-sm">

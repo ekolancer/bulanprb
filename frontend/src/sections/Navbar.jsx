@@ -52,18 +52,16 @@ export const Navbar = () => {
             aria-label="Beranda Bulan PRB 2026"
             className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
           >
-            <span
-              className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-extrabold transition-colors duration-300 ${isOverHero ? 'bg-white text-primary' : 'bg-primary text-white'
-                }`}
-              aria-hidden="true"
-            >
-              B
-            </span>
+            <img
+              src="/BNPB.png"
+              alt="Logo BNPB"
+              className="w-9 h-9 object-contain shrink-0"
+            />
             <span
               className={`font-extrabold text-lg sm:text-xl tracking-tight transition-colors duration-300 ${isOverHero ? 'text-white' : 'text-primary'
                 }`}
             >
-              Bulan PRB 2026
+              Bulan PRB
             </span>
           </Link>
 
