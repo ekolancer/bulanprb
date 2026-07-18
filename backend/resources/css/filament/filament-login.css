@@ -1,384 +1,351 @@
-.fi-login-page {
-    background:
-        linear-gradient(135deg, rgba(8, 15, 32, 0.82), rgba(17, 38, 74, 0.68)),
-        url("../images/gBNPB.webp") center center / cover no-repeat fixed;
-}
+/* ==========================================================================
+   Bulan PRB 2026 — Admin Login (Split Screen)
+   ========================================================================== */
 
-.fi-login-page::before,
-.fi-login-page::after {
-    content: "";
-    position: fixed;
-    inset: auto;
-    border-radius: 999px;
-    pointer-events: none;
-    filter: blur(90px);
-    opacity: 0.8;
-    z-index: 0;
-}
-
-.fi-login-page::before {
-    top: 8%;
-    left: 4%;
-    width: 20rem;
-    height: 20rem;
-    background: rgba(59, 130, 246, 0.18);
-}
-
-.fi-login-page::after {
-    right: 8%;
-    bottom: 8%;
-    width: 24rem;
-    height: 24rem;
-    background: rgba(14, 165, 233, 0.15);
-}
-
-.fi-login-page .fi-simple-layout {
+.fi-login-split {
     position: relative;
-    isolation: isolate;
-}
-
-.fi-login-page .fi-simple-main-ctn {
-    padding: 1.25rem;
-}
-
-.fi-login-page .fi-simple-main {
-    width: min(100%, 1280px);
-    margin: 0;
-    padding: 0;
-    background: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-
-.fi-login-shell {
-    position: relative;
-    z-index: 1;
-}
-
-.fi-login-layout {
-    display: flex;
-    justify-content: center;
-}
-
-.fi-login-card {
-    @apply glass-effect;
-    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 100dvh;
+    width: 100%;
+    background: var(--color-white);
     overflow: hidden;
-    width: min(100%, 33rem);
-    border-radius: 30px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1)),
-        rgba(255, 255, 255, 0.1) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        0 24px 80px rgba(15, 23, 42, 0.34) !important;
 }
 
-.fi-login-card__inner {
+.dark .fi-login-split {
+    background: var(--color-gray-950);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Left: Form side                                                        */
+/* ---------------------------------------------------------------------- */
+
+.fi-login-split__form-side {
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    padding: clamp(1.5rem, 3vw, 3rem);
-}
-
-.fi-login-brand {
-    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    padding: clamp(2rem, 6vw, 5rem);
+    background-color: #fbfafa;
+}
+
+.fi-login-split__form-wrap {
+    width: 100%;
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fi-login-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+    flex: 1;
+    justify-content: center;
+}
+
+@keyframes fi-login-fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fi-login-split__heading {
     margin-bottom: 2rem;
-    text-align: left;
 }
 
-.fi-login-brand img {
-    width: 4.25rem;
-    height: 4.25rem;
-    object-fit: contain;
-    padding: 0.65rem;
-    border-radius: 1.35rem;
-    background: rgba(255, 255, 255, 0.22);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.fi-login-brand__eyebrow {
-    margin: 0 0 0.35rem;
-    color: var(--color-primary-400);
-    font-size: 0.8rem;
+.fi-login-split__heading h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.65rem, 2.4vw, 1.95rem);
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    color: var(--color-black);
 }
 
-.fi-login-brand h1,
-.fi-login-card h2 {
+.dark .fi-login-split__heading h1 {
+    color: var(--color-black);
+}
+
+.fi-login-split__heading p {
     margin: 0;
-    letter-spacing: -0.03em;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-black);
 }
 
-.fi-login-brand h1 {
-    font-size: clamp(1.7rem, 3vw, 2.2rem);
-    color: var(--color-gray-950);
+.dark .fi-login-split__heading p {
+    color: var(--color-black);
 }
 
-.fi-login-card__header {
-    margin-bottom: 2rem;
+.fi-login-split__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Support link below form */
+.fi-login-split__footer {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--color-black);
     text-align: center;
 }
 
-.fi-login-card__kicker {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    margin-bottom: 1rem;
-    padding: 0.45rem 0.8rem;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.5);
-    color: var(--color-gray-950);
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+.fi-login-split__footer a {
+    font-weight: 600;
+    color: var(--color-black);
+    text-decoration: none;
 }
 
-.fi-login-card h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: var(--color-gray-950);
+.fi-login-split__footer a:hover {
+    text-decoration: underline;
 }
 
-.fi-login-card__copy {
-    max-width: 42ch;
-    margin: 1rem auto 0;
-    color: var(--color-gray-700);
-    font-size: 0.98rem;
-    line-height: 1.7;
+.dark .fi-login-split__footer {
+    color: var(--color-black);
 }
 
-.fi-login-form {
-    gap: 1.2rem;
+.dark .fi-login-split__footer a {
+    color: var(--color-black);
 }
 
-.fi-login-page .fi-login-form .fi-fo-field-wrp-label {
-    color: var(--color-gray-900);
-    font-weight: 700;
+/* Copyright pinned at bottom-left */
+.fi-login-split__copyright {
+    margin: 0;
+    padding-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--color-black);
+    text-align: center;
+    width: 100%;
+    max-width: 26rem;
 }
 
-.fi-login-page .fi-login-form .fi-input-wrp {
-    @apply glass-effect;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.58) !important;
+.dark .fi-login-split__copyright {
+    color: var(--color-black);
 }
 
-.fi-login-page .fi-login-form .fi-input-wrp:focus-within {
-    border-color: rgba(37, 99, 235, 0.42) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        0 0 0 4px rgba(59, 130, 246, 0.12),
-        0 16px 34px rgba(59, 130, 246, 0.16) !important;
+/* Form field overrides — clean, no glass, matches split aesthetic */
+.fi-login-split .fi-fo-field-wrp-label {
+    font-weight: 600;
+    color: var(--color-black);
 }
 
-.fi-login-page .fi-login-form .fi-input-wrp-input input,
-.fi-login-page .fi-login-form .fi-input-wrp-input {
-    color: var(--color-gray-950) !important;
+.dark .fi-login-split .fi-fo-field-wrp-label {
+    color: var(--color-black);
 }
 
-.fi-login-page .fi-login-form input::placeholder {
-    color: var(--color-gray-500) !important;
+.fi-login-split .fi-input-wrp {
+    border-radius: 0.65rem;
+    border-color: var(--color-gray-200) !important;
+    background: var(--color-white) !important;
+    transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Specific rule for OTP Input Placeholder to ensure it is visible and not cut off by letter-spacing */
-.fi-login-page .fi-login-form input[autocomplete="one-time-code"]::placeholder {
-    letter-spacing: normal !important;
-    font-size: 1.3rem !important; /* text-sm */
-    text-align: center !important;
-    opacity: 0.8;
+.fi-login-split .fi-fo-text-input,
+.fi-login-split .fi-fo-select,
+.fi-login-split .fi-fo-textarea {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
 }
 
-/* Dark Mode Overrides to match theme.css and ensure high readability */
-.dark .fi-login-page .fi-login-form .fi-input-wrp {
-    background: var(--color-glass-black) !important;
-    border-color: var(--color-glass-border-black) !important;
-    backdrop-filter: blur(var(--glass-blur)) !important;
+.fi-login-split .fi-input-wrp:focus-within {
+    border-color: rgba(59, 130, 246, 0.55) !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
 }
 
-.dark .fi-login-page .fi-login-form .fi-input-wrp:focus-within {
-    border-color: rgba(59, 130, 246, 0.5) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        0 0 0 4px rgba(59, 130, 246, 0.2),
-        0 16px 34px rgba(59, 130, 246, 0.25) !important;
+/* Input text, placeholder, hint, checkbox label — all solid black */
+.fi-login-split .fi-input {
+    color: var(--color-black) !important;
 }
 
-.dark .fi-login-page .fi-login-form .fi-input-wrp-input input,
-.dark .fi-login-page .fi-login-form .fi-input-wrp-input {
-    color: var(--color-gray-100) !important;
-}
-
-.dark .fi-login-page .fi-login-form input::placeholder {
+.fi-login-split .fi-input::placeholder {
     color: var(--color-gray-400) !important;
 }
 
-.dark .fi-login-page .fi-login-form .fi-input-wrp button,
-.dark .fi-login-page .fi-login-form .fi-input-wrp svg {
-    color: #ffffff !important;
-    opacity: 0.8;
-}
-
-.fi-login-page .fi-login-form .fi-checkbox-input {
-    background: rgba(255, 255, 255, 0.58) !important;
-}
-
-.fi-login-page .fi-login-form .fi-fo-field-wrp-hint,
-.fi-login-page .fi-login-form .fi-fo-field-wrp-helper-text {
+.dark .fi-login-split .fi-input::placeholder {
     color: var(--color-gray-500) !important;
 }
 
-.fi-login-page .fi-login-form a,
-.fi-login-page .fi-login-form .fi-fo-field-wrp-hint a {
-    color: #000000 !important;
-    font-weight: 400 !important;
-    text-decoration: underline !important;
+.fi-login-split .fi-fo-field-wrp-hint,
+.fi-login-split .fi-fo-field-wrp-helper-text {
+    color: var(--color-black) !important;
 }
 
-.dark .fi-login-page .fi-login-form a,
-.dark .fi-login-page .fi-login-form .fi-fo-field-wrp-hint a {
-    color: #ffffff !important;
+.fi-login-split .fi-checkbox-input-label,
+.fi-login-split .fi-fo-checkbox + label,
+.fi-login-split label {
+    color: var(--color-black) !important;
 }
 
-.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) {
-    min-height: 3.25rem;
-    border-radius: 18px !important;
+.fi-login-split .fi-checkbox-input {
+    box-shadow: 0 0 0 1px var(--color-black) !important;
+}
+
+.fi-login-split .fi-checkbox-input:checked {
+    background-color: var(--color-black) !important;
+}
+
+.fi-login-split a,
+.fi-login-split .fi-fo-field-wrp-hint a {
+    color: var(--color-black) !important;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.dark .fi-login-split .fi-input,
+.dark .fi-login-split .fi-fo-field-wrp-hint,
+.dark .fi-login-split .fi-fo-field-wrp-helper-text,
+.dark .fi-login-split label,
+.dark .fi-login-split a {
+    color: var(--color-black) !important;
+}
+
+.dark .fi-login-split .fi-fo-field-label-content {
+    color: var(--color-black) !important;
+}
+
+.fi-login-split .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) {
+    min-height: 3rem;
+    border-radius: 0.65rem !important;
     background: linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.18),
-        0 16px 34px rgba(37, 99, 235, 0.28) !important;
+        0 12px 28px rgba(37, 99, 235, 0.28) !important;
+    transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1) !important;
 }
 
-/* Ensure primary button text is always white */
-.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray),
-.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) * {
+.fi-login-split .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray):active {
+    transform: scale(0.98);
+}
+
+.fi-login-split .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray),
+.fi-login-split .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) * {
     color: #ffffff !important;
 }
 
-.fi-login-page .fi-login-form .fi-btn.fi-color-gray,
-.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray {
-    min-height: 3.25rem;
-    border-radius: 18px !important;
-    background: rgba(148, 163, 184, 0.16) !important;
-    border: 1.5px solid rgba(148, 163, 184, 0.3) !important;
-    box-shadow: none !important;
-    backdrop-filter: blur(10px);
-}
+/* ---------------------------------------------------------------------- */
+/* Right: Visual side                                                     */
+/* ---------------------------------------------------------------------- */
 
-/* Ensure light mode gray button text is dark for readability */
-.fi-login-page .fi-login-form .fi-btn.fi-color-gray,
-.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray,
-.fi-login-page .fi-login-form .fi-btn.fi-color-gray *,
-.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray * {
-    color: var(--color-gray-950) !important;
-}
-
-.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray,
-.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-/* Ensure dark mode gray button text is light for readability */
-.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray,
-.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray,
-.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray *,
-.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray * {
-    color: var(--color-gray-100) !important;
-}
-
-.fi-login-page .fi-login-form .fi-btn.fi-color-gray:hover,
-.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray:hover {
-    background: rgba(148, 163, 184, 0.26) !important;
-}
-
-.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray:hover,
-.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray:hover {
-    background: rgba(255, 255, 255, 0.14) !important;
-}
-
-/* Minimalist absolute-positioned Back Button */
-.fi-login-back-btn {
-    position: absolute;
-    top: 1.25rem;
-    left: 1.25rem;
+.fi-login-split__visual-side {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    background: rgba(15, 23, 42, 0.08);
-    border: 1px solid rgba(15, 23, 42, 0.12);
-    color: var(--color-gray-900) !important;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    z-index: 10;
-    backdrop-filter: blur(8px);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(232, 98, 26, 0.22) 0%, transparent 45%),
+        linear-gradient(160deg, #0b1530 0%, #101f45 45%, #14285e 100%);
 }
 
-.fi-login-back-btn:hover {
-    background: rgba(15, 23, 42, 0.16);
-    transform: translateX(-3px);
+/* Cross/plus dot grid pattern (matches reference) */
+.fi-login-split__visual-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        /* horizontal stroke of plus */
+        linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        /* vertical stroke of plus */
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+    background-size: 32px 32px;
+    /* Mask the grid lines to only show plus signs at intersections */
+    background-position: center center;
+    mask-image:
+        repeating-linear-gradient(to right, transparent 0px, transparent 14px, black 14px, black 18px, transparent 18px, transparent 32px),
+        repeating-linear-gradient(to bottom, transparent 0px, transparent 14px, black 14px, black 18px, transparent 18px, transparent 32px);
+    mask-composite: intersect;
+    opacity: 0.5;
 }
 
-.dark .fi-login-back-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
-    color: var(--color-gray-100) !important;
+/* Glassmorphism card — central content in right panel */
+.fi-login-split__visual-card {
+    position: relative;
+    z-index: 1;
+    width: min(26rem, 80%);
+    padding: 3rem 2.5rem 2.5rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 24px 64px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fi-login-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-.dark .fi-login-back-btn:hover {
-    background: rgba(255, 255, 255, 0.16);
-}
-
-.fi-login-back-btn svg {
-    width: 1.15rem;
-    height: 1.15rem;
-    stroke-width: 2.5;
-}
-
-.fi-login-card__footer {
+/* Icon circle on top of card */
+.fi-login-split__visual-icon {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    color: rgba(248, 248, 248, 0.92);
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.12));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    margin-bottom: 1.75rem;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 720px) {
-    .fi-login-page .fi-simple-main-ctn {
-        padding: 0.75rem;
+.fi-login-split__visual-heading {
+    margin: 0 0 1rem;
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.fi-login-split__visual-copy {
+    margin: 0 0 2rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 22rem;
+}
+
+/* Subtle bottom divider accent */
+.fi-login-split__visual-divider {
+    width: 2.5rem;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive collapse                                                    */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+    .fi-login-split {
+        grid-template-columns: 1fr;
     }
 
-    .fi-login-card {
-        border-radius: 24px;
+    .fi-login-split__visual-side {
+        display: none;
     }
 
-    .fi-login-card__inner {
-        padding: 1.25rem;
+    .fi-login-split__form-side {
+        padding: 2rem 1.25rem;
     }
+}
 
-    .fi-login-brand {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .fi-login-card__footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+@media (max-width: 480px) {
+    .fi-login-split__form-wrap {
+        max-width: 100%;
     }
 }
