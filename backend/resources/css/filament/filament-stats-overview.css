@@ -1,0 +1,200 @@
+/* =========================================================
+   Stats Overview – Glassmorphism Redesign
+   ========================================================= */
+
+:root {
+    --stats-glass-blur: 16px;
+    --stats-glass-bg: rgba(255, 255, 255, 0.45);
+    --stats-glass-border: rgba(255, 255, 255, 0.25);
+    --stats-glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    
+    --stats-text-primary: #0f172a;
+    --stats-text-muted: #64748b;
+}
+
+.dark {
+    --stats-glass-bg: rgba(15, 23, 42, 0.45);
+    --stats-glass-border: rgba(255, 255, 255, 0.08);
+    --stats-glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    
+    --stats-text-primary: #f1f5f9;
+    --stats-text-muted: #94a3b8;
+}
+
+/* Widget wrapper */
+.fi-wi-stats-overview-modern {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Header (Optional) */
+.fi-wi-stats-modern-header {
+    display: grid;
+    gap: 0.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.fi-wi-stats-modern-header__title {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--stats-text-primary);
+}
+
+.fi-wi-stats-modern-header__description {
+    margin: 0;
+    color: var(--stats-text-muted);
+    font-size: 0.85rem;
+}
+
+/* ---- Card Container (Grid of separate cards) ---- */
+.fi-wi-stats-modern-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.85rem;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+}
+
+/* ---- Individual Glass Card (Compact) ---- */
+.fi-wi-stats-modern-stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.25rem;
+    border-radius: 1.25rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    
+    /* Glassmorphism */
+    background: var(--stats-glass-bg) !important;
+    backdrop-filter: blur(var(--stats-glass-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--stats-glass-blur)) !important;
+    border: 1px solid var(--stats-glass-border) !important;
+    box-shadow: var(--stats-glass-shadow) !important;
+}
+
+.fi-wi-stats-modern-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ---- Card Header (Label + Icon) ---- */
+.fi-wi-stats-modern-stat__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.fi-wi-stats-modern-stat__label {
+    color: var(--stats-text-muted);
+    font-size: 0.725rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+/* ---- Icon Circle (Compact) ---- */
+.fi-wi-stats-modern-stat__icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.85rem;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fi-wi-stats-modern-stat__icon {
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+/* ---- Value (Compact) ---- */
+.fi-wi-stats-modern-stat__value {
+    color: var(--stats-text-primary);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+}
+
+/* ---- Description / Delta (Compact) ---- */
+.fi-wi-stats-modern-stat__description {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.775rem;
+    font-weight: 700;
+}
+
+.fi-wi-stats-modern-stat__description-icon {
+    width: 0.85rem;
+    height: 0.85rem;
+}
+
+.fi-wi-stats-modern-stat__description-content {
+    color: var(--stats-text-muted);
+}
+
+/* ---- Color Schemes (Icon Circle Gradients) ---- */
+
+/* Primary / Blue */
+.fi-wi-stats-modern-stat--primary .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+.fi-wi-stats-modern-stat__description--primary { color: #3b82f6; }
+
+/* Success / Green */
+.fi-wi-stats-modern-stat--success .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+.fi-wi-stats-modern-stat__description--success { color: #10b981; }
+
+/* Danger / Red */
+.fi-wi-stats-modern-stat--danger .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+}
+.fi-wi-stats-modern-stat__description--danger { color: #ef4444; }
+
+/* Warning / Orange */
+.fi-wi-stats-modern-stat--warning .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+.fi-wi-stats-modern-stat__description--warning { color: #f59e0b; }
+
+/* Info / Cyan */
+.fi-wi-stats-modern-stat--info .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #06b6d4, #67e8f9);
+}
+.fi-wi-stats-modern-stat__description--info { color: #06b6d4; }
+
+/* Gray */
+.fi-wi-stats-modern-stat--gray .fi-wi-stats-modern-stat__icon-circle {
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+}
+.fi-wi-stats-modern-stat__description--gray { color: #64748b; }
+
+/* ---- Responsive Adjustments ---- */
+@media (max-width: 640px) {
+    .fi-wi-stats-modern-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .fi-wi-stats-modern-stat {
+        padding: 1.5rem;
+    }
+    
+    .fi-wi-stats-modern-stat__value {
+        font-size: 1.85rem;
+    }
+}

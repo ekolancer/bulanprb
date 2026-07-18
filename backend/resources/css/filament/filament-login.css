@@ -1,0 +1,384 @@
+.fi-login-page {
+    background:
+        linear-gradient(135deg, rgba(8, 15, 32, 0.82), rgba(17, 38, 74, 0.68)),
+        url("../images/gBNPB.webp") center center / cover no-repeat fixed;
+}
+
+.fi-login-page::before,
+.fi-login-page::after {
+    content: "";
+    position: fixed;
+    inset: auto;
+    border-radius: 999px;
+    pointer-events: none;
+    filter: blur(90px);
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.fi-login-page::before {
+    top: 8%;
+    left: 4%;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(59, 130, 246, 0.18);
+}
+
+.fi-login-page::after {
+    right: 8%;
+    bottom: 8%;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(14, 165, 233, 0.15);
+}
+
+.fi-login-page .fi-simple-layout {
+    position: relative;
+    isolation: isolate;
+}
+
+.fi-login-page .fi-simple-main-ctn {
+    padding: 1.25rem;
+}
+
+.fi-login-page .fi-simple-main {
+    width: min(100%, 1280px);
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.fi-login-shell {
+    position: relative;
+    z-index: 1;
+}
+
+.fi-login-layout {
+    display: flex;
+    justify-content: center;
+}
+
+.fi-login-card {
+    @apply glass-effect;
+    position: relative;
+    overflow: hidden;
+    width: min(100%, 33rem);
+    border-radius: 30px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1)),
+        rgba(255, 255, 255, 0.1) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 24px 80px rgba(15, 23, 42, 0.34) !important;
+}
+
+.fi-login-card__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: clamp(1.5rem, 3vw, 3rem);
+}
+
+.fi-login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.fi-login-brand img {
+    width: 4.25rem;
+    height: 4.25rem;
+    object-fit: contain;
+    padding: 0.65rem;
+    border-radius: 1.35rem;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.fi-login-brand__eyebrow {
+    margin: 0 0 0.35rem;
+    color: var(--color-primary-400);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.fi-login-brand h1,
+.fi-login-card h2 {
+    margin: 0;
+    letter-spacing: -0.03em;
+}
+
+.fi-login-brand h1 {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    color: var(--color-gray-950);
+}
+
+.fi-login-card__header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.fi-login-card__kicker {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--color-gray-950);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.fi-login-card h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--color-gray-950);
+}
+
+.fi-login-card__copy {
+    max-width: 42ch;
+    margin: 1rem auto 0;
+    color: var(--color-gray-700);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.fi-login-form {
+    gap: 1.2rem;
+}
+
+.fi-login-page .fi-login-form .fi-fo-field-wrp-label {
+    color: var(--color-gray-900);
+    font-weight: 700;
+}
+
+.fi-login-page .fi-login-form .fi-input-wrp {
+    @apply glass-effect;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.58) !important;
+}
+
+.fi-login-page .fi-login-form .fi-input-wrp:focus-within {
+    border-color: rgba(37, 99, 235, 0.42) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 0 4px rgba(59, 130, 246, 0.12),
+        0 16px 34px rgba(59, 130, 246, 0.16) !important;
+}
+
+.fi-login-page .fi-login-form .fi-input-wrp-input input,
+.fi-login-page .fi-login-form .fi-input-wrp-input {
+    color: var(--color-gray-950) !important;
+}
+
+.fi-login-page .fi-login-form input::placeholder {
+    color: var(--color-gray-500) !important;
+}
+
+/* Specific rule for OTP Input Placeholder to ensure it is visible and not cut off by letter-spacing */
+.fi-login-page .fi-login-form input[autocomplete="one-time-code"]::placeholder {
+    letter-spacing: normal !important;
+    font-size: 1.3rem !important; /* text-sm */
+    text-align: center !important;
+    opacity: 0.8;
+}
+
+/* Dark Mode Overrides to match theme.css and ensure high readability */
+.dark .fi-login-page .fi-login-form .fi-input-wrp {
+    background: var(--color-glass-black) !important;
+    border-color: var(--color-glass-border-black) !important;
+    backdrop-filter: blur(var(--glass-blur)) !important;
+}
+
+.dark .fi-login-page .fi-login-form .fi-input-wrp:focus-within {
+    border-color: rgba(59, 130, 246, 0.5) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 4px rgba(59, 130, 246, 0.2),
+        0 16px 34px rgba(59, 130, 246, 0.25) !important;
+}
+
+.dark .fi-login-page .fi-login-form .fi-input-wrp-input input,
+.dark .fi-login-page .fi-login-form .fi-input-wrp-input {
+    color: var(--color-gray-100) !important;
+}
+
+.dark .fi-login-page .fi-login-form input::placeholder {
+    color: var(--color-gray-400) !important;
+}
+
+.dark .fi-login-page .fi-login-form .fi-input-wrp button,
+.dark .fi-login-page .fi-login-form .fi-input-wrp svg {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+
+.fi-login-page .fi-login-form .fi-checkbox-input {
+    background: rgba(255, 255, 255, 0.58) !important;
+}
+
+.fi-login-page .fi-login-form .fi-fo-field-wrp-hint,
+.fi-login-page .fi-login-form .fi-fo-field-wrp-helper-text {
+    color: var(--color-gray-500) !important;
+}
+
+.fi-login-page .fi-login-form a,
+.fi-login-page .fi-login-form .fi-fo-field-wrp-hint a {
+    color: #000000 !important;
+    font-weight: 400 !important;
+    text-decoration: underline !important;
+}
+
+.dark .fi-login-page .fi-login-form a,
+.dark .fi-login-page .fi-login-form .fi-fo-field-wrp-hint a {
+    color: #ffffff !important;
+}
+
+.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) {
+    min-height: 3.25rem;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        0 16px 34px rgba(37, 99, 235, 0.28) !important;
+}
+
+/* Ensure primary button text is always white */
+.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray),
+.fi-login-page .fi-login-form .fi-btn:not(.fi-color-gray):not(.fi-btn-color-gray) * {
+    color: #ffffff !important;
+}
+
+.fi-login-page .fi-login-form .fi-btn.fi-color-gray,
+.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray {
+    min-height: 3.25rem;
+    border-radius: 18px !important;
+    background: rgba(148, 163, 184, 0.16) !important;
+    border: 1.5px solid rgba(148, 163, 184, 0.3) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Ensure light mode gray button text is dark for readability */
+.fi-login-page .fi-login-form .fi-btn.fi-color-gray,
+.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray,
+.fi-login-page .fi-login-form .fi-btn.fi-color-gray *,
+.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray * {
+    color: var(--color-gray-950) !important;
+}
+
+.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray,
+.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Ensure dark mode gray button text is light for readability */
+.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray,
+.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray,
+.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray *,
+.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray * {
+    color: var(--color-gray-100) !important;
+}
+
+.fi-login-page .fi-login-form .fi-btn.fi-color-gray:hover,
+.fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray:hover {
+    background: rgba(148, 163, 184, 0.26) !important;
+}
+
+.dark .fi-login-page .fi-login-form .fi-btn.fi-color-gray:hover,
+.dark .fi-login-page .fi-login-form .fi-btn.fi-btn-color-gray:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* Minimalist absolute-positioned Back Button */
+.fi-login-back-btn {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    color: var(--color-gray-900) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+}
+
+.fi-login-back-btn:hover {
+    background: rgba(15, 23, 42, 0.16);
+    transform: translateX(-3px);
+}
+
+.dark .fi-login-back-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-gray-100) !important;
+}
+
+.dark .fi-login-back-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.fi-login-back-btn svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    stroke-width: 2.5;
+}
+
+.fi-login-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1.5rem;
+    color: rgba(248, 248, 248, 0.92);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+    .fi-login-page .fi-simple-main-ctn {
+        padding: 0.75rem;
+    }
+
+    .fi-login-card {
+        border-radius: 24px;
+    }
+
+    .fi-login-card__inner {
+        padding: 1.25rem;
+    }
+
+    .fi-login-brand {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fi-login-card__footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
