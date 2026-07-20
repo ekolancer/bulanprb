@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 55 520 260" width="100%" height="100%">
+<!--Background transparan-->
+<!--Cincin lingkaran tipis di belakang-->
+  <circle cx="320" cy="185" r="112" fill="none" stroke="#4a5560" stroke-width="1.5" opacity="0.7"/>
+<!--Angka 4-->
+  <text x="150" y="235" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="200" fill="#2bb6c4" text-anchor="middle">4</text>
+<!--Angka 3-->
+  <text x="490" y="235" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="200" fill="#2bb6c4" text-anchor="middle">3</text>
+<!--Titik navy kecil, menumpuk di angka 4 & cincin-->
+  <circle cx="210" cy="185" r="15" fill="#3a4750"/>
+<!--Lingkaran biru muda di tengah-->
+  <circle cx="320" cy="185" r="82" fill="#c9e2ef"/>
+<!--Ikon Gembok-->
+  <g transform="translate(320, 185)">
+<!--Gagang gembok (shackle)-->
+    <path d="M-20,-15 L-20,-32 C-20,-47 -11,-56 0,-56 C11,-56 20,-47 20,-32 L20,-15" fill="none" stroke="#9aa5ad" stroke-width="9" stroke-linecap="round"/>
+<!--Badan gembok-->
+    <rect x="-30" y="-15" width="60" height="52" rx="8" fill="#f4c920"/>
+<!--Lubang kunci-->
+    <circle cx="0" cy="4" r="6" fill="#1c1d2b"/>
+    <rect x="-3" y="8" width="6" height="12" fill="#1c1d2b"/>
+  </g>
+</svg>

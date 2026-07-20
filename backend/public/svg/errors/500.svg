@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <!-- Efek Bayangan untuk Elemen Utama -->
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1e293b" flood-opacity="0.15" />
+    </filter>
+    
+    <!-- Pattern Titik-Titik Lampu Server (Dot Grid) -->
+    <pattern id="server-dots" x="0" y="0" width="12" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="5" r="2" fill="#93c5fd" opacity="0.8" />
+    </pattern>
+  </defs>
+
+  <!-- Latar Belakang & Awan/Siluet Kota Halus -->
+  <rect width="1000" height="600" fill="#ffffff" />
+  <path d="M100,260 C150,220 250,220 300,250 C380,210 600,200 680,270 C750,240 850,250 900,310 L900,520 L100,520 Z" fill="#eff6ff" opacity="0.6" />
+  <path d="M50,330 C120,300 200,340 280,310 C400,290 500,350 650,300 C750,310 880,280 950,350 L950,520 L50,520 Z" fill="#e0f2fe" opacity="0.4" />
+
+  <!-- Garis Dasar Tanah/Lantai -->
+  <line x1="50" y1="520" x2="950" y2="520" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round" />
+
+  <!-- DEDAUNAN KIRI -->
+  <g transform="translate(90, 310)" fill="#4ade80">
+    <!-- Daun Belakang (Lebih Gelap) -->
+    <path d="M45,210 C10,210 -20,150 10,100 C30,70 80,70 90,120 C110,60 180,90 160,150 C150,180 110,210 45,210 Z" fill="#22c55e" opacity="0.8" />
+    <!-- Daun Utama Depan -->
+    <path d="M50,210 C-10,190 -10,110 30,80 C60,60 90,100 100,80 C120,30 190,50 180,110 C170,150 120,210 50,210 Z" />
+    <!-- Tekstur Tulang Daun -->
+    <path d="M50,210 L100,80 M40,160 L70,150 M35,120 L75,120 M75,180 L115,165 M92,137 L130,125" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- RAK SERVER (Sisi Kiri) -->
+  <g transform="translate(230, 185)" filter="url(#drop-shadow)">
+    <!-- Sisi 3D / Bayangan Samping Server -->
+    <path d="M195,15 L240,15 L240,335 L195,335 Z" fill="#93c5fd" />
+    <!-- Body Utama Box Server -->
+    <rect width="195" height="335" rx="16" fill="#bfdbfe" />
+    <rect x="8" y="8" width="179" height="319" rx="10" fill="#dbeafe" />
+    
+    <!-- Slot Server 1 (Atas) -->
+    <rect x="22" y="25" width="150" height="60" rx="6" fill="#1e3a8a" />
+    <rect x="35" y="37" width="95" height="35" fill="url(#server-dots)" />
+    <circle cx="148" cy="55" r="3" fill="#f59e0b" />
+    <circle cx="157" cy="55" r="3" fill="#f59e0b" />
+    <circle cx="166" cy="55" r="3" fill="#3b82f6" />
+
+    <!-- Slot Server 2 -->
+    <rect x="22" y="98" width="150" height="60" rx="6" fill="#1e3a8a" />
+    <rect x="35" y="110" width="95" height="35" fill="url(#server-dots)" />
+    <circle cx="148" cy="128" r="3" fill="#f59e0b" />
+    <circle cx="157" cy="128" r="3" fill="#f59e0b" />
+    <circle cx="166" cy="128" r="3" fill="#f59e0b" />
+
+    <!-- Slot Server 3 -->
+    <rect x="22" y="171" width="150" height="60" rx="6" fill="#1e3a8a" />
+    <rect x="35" y="183" width="95" height="35" fill="url(#server-dots)" />
+    <circle cx="148" cy="201" r="3" fill="#f59e0b" />
+    <circle cx="157" cy="201" r="3" fill="#f59e0b" />
+    <circle cx="166" cy="201" r="3" fill="#3b82f6" />
+
+    <!-- Slot Server 4 (Bawah) -->
+    <rect x="22" y="244" width="150" height="60" rx="6" fill="#1e3a8a" />
+    <rect x="35" y="256" width="95" height="35" fill="url(#server-dots)" />
+    <circle cx="148" cy="274" r="3" fill="#f59e0b" />
+    <circle cx="157" cy="274" r="3" fill="#f59e0b" />
+    <circle cx="166" cy="274" r="3" fill="#f59e0b" />
+  </g>
+
+  <!-- KONEKSI CLOUD ERROR (Atas Server) -->
+  <!-- Garis Putus-putus Koneksi -->
+  <path d="M352,185 L352,120 L590,120 L590,240" fill="none" stroke="#475569" stroke-width="3" stroke-dasharray="6,6" />
+  <!-- Awan Merah dengan Tanda Silang (X) -->
+  <g transform="translate(440, 100)">
+    <path d="M25,5 C35,5 43,12 45,20 C50,20 55,25 55,32 C55,39 49,44 42,44 L12,44 C5,44 0,39 0,32 C0,26 4,21 10,20 C11,12 18,5 25,5 Z" fill="#ef4444" />
+    <!-- Tanda Silang (X) Putih -->
+    <path d="M24,21 L30,27 M30,21 L24,27" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- MONITOR UTAMA (Sisi Kanan) -->
+  <g transform="translate(395, 240)" filter="url(#drop-shadow)">
+    <!-- Kaki & Dudukan Monitor -->
+    <path d="M150,230 L160,290 L210,290 L220,230 Z" fill="#1e293b" />
+    <ellipse cx="185" cy="290" rx="55" ry="10" fill="#475569" />
+    
+    <!-- Bingkai Luar Monitor -->
+    <rect width="370" height="240" rx="12" fill="#1e293b" />
+    <!-- Layar Dalam (Biru Gelap) -->
+    <rect x="6" y="6" width="358" height="188" rx="6" fill="#1e3a8a" />
+    
+    <!-- Konten Layar: Segitiga Peringatan 500 -->
+    <g transform="translate(140, 25)">
+      <!-- Segitiga Merah -->
+      <path d="M45,15 L85,75 C88,80 84,85 78,85 L12,85 C6,85 2,80 5,75 Z" fill="#ef4444" />
+      <!-- Tanda Seru Putih -->
+      <circle cx="45" cy="72" r="3.5" fill="#ffffff" />
+      <path d="M45,40 L45,62" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+    </g>
+
+    <!-- Teks Error 500 -->
+    <text x="185" y="148" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="27" fill="#ffffff" text-anchor="middle" letter-spacing="2">500</text>
+    <text x="185" y="172" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="12" fill="#93c5fd" text-anchor="middle" letter-spacing="3">INTERNAL SERVER ERROR</text>
+  </g>
+
+  <!-- DEDAUNAN KANAN -->
+  <g transform="translate(740, 310)" fill="#4ade80">
+    <!-- Daun Belakang (Lebih Gelap) -->
+    <path d="M135,210 C170,210 200,150 170,100 C150,70 100,70 90,120 C70,60 0,90 20,150 C30,180 70,210 135,210 Z" fill="#22c55e" opacity="0.8" />
+    <!-- Daun Utama Depan -->
+    <path d="M130,210 C190,190 190,110 150,80 C120,60 90,100 80,80 C60,30 -10,50 0,110 C10,150 60,210 130,210 Z" />
+    <!-- Tekstur Tulang Daun -->
+    <path d="M130,210 L80,80 M140,160 L110,150 M145,120 L105,120 M105,180 L65,165 M88,137 L50,125" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  </g>
+</svg>
