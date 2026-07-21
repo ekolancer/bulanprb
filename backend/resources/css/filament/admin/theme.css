@@ -32,12 +32,22 @@
         --glass-blur: 16px;
         --glass-bg: var(--color-glass-white);
         --glass-border: var(--color-glass-border-white);
+
+        /* Sidebar gets its own darker, higher-contrast glass tone vs body/cards */
+        --sidebar-glass-bg: rgba(15, 23, 42, 0.82);
+        --sidebar-glass-border: rgba(255, 255, 255, 0.08);
+        --sidebar-glass-blur: 24px;
     }
 
     .dark {
         --glass-blur: 16px;
         --glass-bg: var(--color-glass-black);
         --glass-border: var(--color-glass-border-black);
+
+        /* Dark mode: sidebar sits deeper than body so it still reads as separate layer */
+        --sidebar-glass-bg: rgba(2, 6, 16, 0.88);
+        --sidebar-glass-border: rgba(255, 255, 255, 0.06);
+        --sidebar-glass-blur: 24px;
     }
 
     body {
@@ -71,14 +81,60 @@
 @layer components {
     /* Layout: Fixed Sidebar */
     .fi-sidebar {
-        @apply glass-effect !shadow-none !fixed !top-[4.5rem] !left-3 !h-[calc(100vh-5.25rem)] !rounded-[var(--radius-glass)] z-20 transition-all duration-300;
-        border: 1.5px solid var(--glass-border) !important;
+        @apply !shadow-none !fixed !top-[4.5rem] !left-3 !h-[calc(100vh-5.25rem)] !rounded-[var(--radius-glass)] z-20 transition-all duration-300;
+        border: 1.5px solid var(--sidebar-glass-border) !important;
         width: var(--sidebar-width);
-        background-color: var(--glass-bg) !important;
-        backdrop-filter: blur(28px) saturate(200%) !important;
+        background-color: var(--sidebar-glass-bg) !important;
+        backdrop-filter: blur(var(--sidebar-glass-blur)) saturate(180%) !important;
         display: flex !important;
         flex-direction: column !important;
         overflow: hidden !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Dark mode: crisper hairline border so sidebar edge reads clearly against dashboard bg */
+    .dark .fi-sidebar {
+        border: 1px solid rgba(148, 163, 184, 0.18) !important;
+    }
+
+    /* Sidebar sits dark in both modes — force light text/icons for contrast */
+    .fi-sidebar .fi-sidebar-item-label,
+    .fi-sidebar .fi-sidebar-group-label {
+        color: rgba(255, 255, 255, 0.85) !important;
+    }
+    .fi-sidebar .fi-sidebar-item-btn > .fi-icon,
+    .fi-sidebar .fi-sidebar-group-btn .fi-icon {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+    .fi-sidebar .fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .fi-sidebar .fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-icon,
+    .fi-sidebar .fi-sidebar-item.fi-active > .fi-sidebar-item-btn > .fi-sidebar-item-label {
+        color: #fff !important;
+    }
+    .fi-sidebar .fi-sidebar-item-has-url > .fi-sidebar-item-btn:hover,
+    .fi-sidebar .fi-sidebar-group-dropdown-trigger-btn:hover {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+    }
+    .fi-sidebar .fi-sidebar-header {
+        background-color: transparent !important;
+    }
+
+    /* Sidebar footer widget (storage meter) — force light-on-dark text since sidebar bg is always dark */
+    .fi-sidebar .glass-sidebar-footer {
+        border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    .fi-sidebar .glass-sidebar-footer .text-gray-500,
+    .fi-sidebar .glass-sidebar-footer .dark\:text-gray-400 {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    .fi-sidebar .glass-sidebar-footer .text-gray-400,
+    .fi-sidebar .glass-sidebar-footer .dark\:text-gray-500 {
+        color: rgba(255, 255, 255, 0.4) !important;
+    }
+    .fi-sidebar .glass-sidebar-footer .bg-gray-200 {
+        background-color: rgba(255, 255, 255, 0.1) !important;
     }
 
     /* Adjust Main Content when sidebar is fixed */
@@ -99,6 +155,26 @@
     }
     .fi-sidebar-nav::-webkit-scrollbar {
         display: none;
+    }
+
+    /* Dashboard item (first item, ungrouped) stays pinned like the footer does at the bottom */
+    .fi-sidebar-nav-groups > li:first-child .fi-sidebar-group-items > .fi-sidebar-item:first-child {
+        position: sticky;
+        top: -0.5rem;
+        margin-top: -0.5rem;
+        padding-top: 0.5rem;
+        z-index: 10;
+        background-color: var(--sidebar-glass-bg);
+        backdrop-filter: blur(var(--sidebar-glass-blur)) saturate(180%);
+    }
+    .fi-sidebar-nav-groups > li:first-child .fi-sidebar-group-items > .fi-sidebar-item:first-child::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.5rem;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
     }
 
     /* Layout: Topbar */

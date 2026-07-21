@@ -13,12 +13,15 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Spatie\Permission\Models\Role;
+use UnitEnum;
 
 class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
+
+    protected static string|UnitEnum|null $navigationGroup = 'Account';
 
     protected static ?string $recordTitleAttribute = 'name';
 
