@@ -79,7 +79,7 @@ export const Hero = () => {
         aria-hidden="true"
       >
         <motion.img
-          src="/hero_image.webp"
+          src="/hero.jpeg"
           alt=""
           aria-hidden="true"
           initial={{ scale: 1.06, opacity: 0 }}

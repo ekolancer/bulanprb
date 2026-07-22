@@ -5,7 +5,7 @@ import { koboFormUrl, koboDashboardUrl } from '../data';
 
 export const GerakanPRB = () => {
   return (
-    <section id="gerakan" className="py-20 sm:py-28 bg-app-gradient relative overflow-hidden">
+    <section id="gerakan" className="min-h-screen flex items-center py-20 sm:py-28 bg-app-gradient relative overflow-hidden">
       {/* Decorative blurred background shape */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-accent-orange/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 
@@ -66,7 +66,7 @@ export const GerakanPRB = () => {
                 </div>
               </div>
               <p className="text-text-secondary text-xs font-medium mt-3 text-center">
-                Data statistik pendaftaran diperbarui secara real-time via KoboToolbox.
+                Data statistik pendaftaran diperbarui secara real-time.
               </p>
             </div>
           </motion.div>

@@ -57,11 +57,11 @@ export const FAQ = () => {
     <section
       id="faq"
       aria-label="Tanya jawab Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden"
+      className="relative py-16 sm:py-20 lg:py-24 bg-white overflow-hidden"
     >
       {/* Subtle geometric pattern background */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `
             linear-gradient(to right, currentColor 1px, transparent 1px),
