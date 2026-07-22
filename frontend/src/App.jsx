@@ -6,10 +6,14 @@ import { RundownPage } from './pages/RundownPage';
 import { AkomodasiPage } from './pages/AkomodasiPage';
 import { MediaCenterPage } from './pages/MediaCenterPage';
 import { Footer } from './sections/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
+import { BackToTop } from './components/BackToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
+
       {/* Skip-to-content — keyboard accessibility, WCAG 2.1 AA */}
       <a href="#main-content" className="skip-to-content">
         Lewati ke konten utama
@@ -22,12 +26,13 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/rundown" element={<RundownPage />} />
-            <Route path="/akomodasi" element={<AkomodasiPage />} />
+            {/* <Route path="/akomodasi" element={<AkomodasiPage />} /> */}
             <Route path="/media-center" element={<MediaCenterPage />} />
           </Routes>
         </main>
 
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   );

@@ -115,10 +115,10 @@ export const Akomodasi = () => {
         >
           {/* <span className="section-label text-primary">Penginapan</span> */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary tracking-tight">
-            Tempat penginapan peserta
+            Rekomendasi Penginapan
           </h2>
           <p className="text-text-secondary text-sm leading-relaxed">
-            Rekomendasi akomodasi terdekat di sekitar venue untuk kenyamanan menginap Anda.
+            Daftar Pilihan Penginanap disekitar Venue.
           </p>
         </motion.div>
 
@@ -135,85 +135,10 @@ export const Akomodasi = () => {
           </button>
         </div>
 
-        {/* Filters */}
-        <div id="filter-panel">
-          {/* Mobile collapsible */}
-          <AnimatePresence initial={false}>
-            {showFilters && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.25 }}
-                className="overflow-hidden lg:hidden"
-              >
-                <div className="flex flex-col gap-4 mb-8 bg-white/70 p-4 rounded-2xl border border-slate-100">
-                  <div className="flex flex-col gap-2">
-                    <FilterGroup label="Tipe" />
-                    <div className="flex gap-2 flex-wrap">
-                      {hotelCategories.map((cat) => (
-                        <FilterPill key={cat} active={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
-                          {cat}
-                        </FilterPill>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <FilterGroup label="Urutkan" icon={ArrowUpDown} />
-                    <div className="flex gap-2 flex-wrap">
-                      {sortOptions.map((opt) => (
-                        <FilterPill
-                          key={opt.value}
-                          active={activeSort === opt.value}
-                          onClick={() => setActiveSort(opt.value)}
-                          activeColor="bg-success text-white shadow-soft"
-                        >
-                          {opt.label}
-                        </FilterPill>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Desktop filters */}
-          <div className="hidden lg:flex flex-col gap-4 mb-8">
-            <div className="flex flex-wrap gap-6 items-start">
-              <div className="flex flex-col gap-2">
-                <FilterGroup label="Tipe" />
-                <div className="flex gap-2">
-                  {hotelCategories.map((cat) => (
-                    <FilterPill key={cat} active={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
-                      {cat}
-                    </FilterPill>
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                <FilterGroup label="Urutkan" icon={ArrowUpDown} />
-                <div className="flex gap-2">
-                  {sortOptions.map((opt) => (
-                    <FilterPill
-                      key={opt.value}
-                      active={activeSort === opt.value}
-                      onClick={() => setActiveSort(opt.value)}
-                      activeColor="bg-success text-white shadow-soft"
-                    >
-                      {opt.label}
-                    </FilterPill>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Results count */}
-        <p className="text-[10px] text-text-secondary font-medium mb-6" aria-live="polite">
+        {/* <p className="text-[10px] text-text-secondary font-medium mb-6" aria-live="polite">
           Menampilkan <strong className="text-text-primary">{filtered.length}</strong> penginapan
-        </p>
+        </p> */}
 
         {/* Hotel cards */}
         <AnimatePresence mode="wait">

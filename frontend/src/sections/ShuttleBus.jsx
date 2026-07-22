@@ -37,9 +37,9 @@ export const ShuttleBus = () => {
           className="flex flex-col items-center text-center gap-4 mb-14 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight leading-[1.1] text-balance">
-            Jadwal shuttle bus
+            Shuttle Bus
           </h2>
-          <p className="text-text-secondary text-base leading-relaxed max-w-md">
+          <p className="text-text-secondary text-base leading-relaxed max-w">
             Layanan transportasi gratis dari titik penjemputan utama menuju lokasi acara.
           </p>
         </motion.div>

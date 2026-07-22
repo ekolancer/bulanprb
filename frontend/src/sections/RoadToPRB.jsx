@@ -33,9 +33,9 @@ export const RoadToPRB = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-2 max-w-lg"
           >
-            <span className="section-label text-primary">Rangkaian Kegiatan</span>
+            <span className="section-label rounded-full px-4 py-1.5 text-[11px] bg-primary/[0.06] ring-1 ring-primary/15 w-fit text-primary">Galeri</span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-primary leading-tight tracking-tight">
-              Galeri Road to PRB
+              Road to PRB
             </h2>
             <p className="text-text-secondary text-sm leading-relaxed">
               Dokumentasi kegiatan pra-event Bulan PRB yang diselenggarakan di berbagai daerah.

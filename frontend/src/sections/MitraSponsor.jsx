@@ -22,9 +22,9 @@ export const MitraSponsor = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-3 text-center max-w-xl mx-auto"
         >
-          <span className="section-label text-text-secondary">Didukung Oleh</span>
+          {/* <span className="section-label text-text-secondary">Didukung Oleh</span> */}
           <h2 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight">
-            Mitra &amp; dukungan strategis
+            Mitra &amp; Sponsor
           </h2>
           <p className="text-text-secondary text-sm leading-relaxed">
             Bulan PRB 2026 terlaksana atas kolaborasi lintas sektor dan dukungan penuh dari berbagai instansi nasional dan internasional.

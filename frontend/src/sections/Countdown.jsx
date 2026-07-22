@@ -138,14 +138,14 @@ export const Countdown = () => {
           transition={{ duration: 0.55, ease: 'easeOut' }}
           className="flex flex-col items-center text-center mb-14 sm:mb-16"
         >
-          <h2 className="flex flex-col leading-[1.05] tracking-tight">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-secondary">
+          <h2 className="flex flex-col tracking-tight">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-secondary leading-tight">
               Peringatan Bulan
             </span>
-            <span className="text-4xl sm:text-5xl lg:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent mt-4">
+            <span className="text-4xl sm:text-5xl lg:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent mt-4 pb-2 leading-[2.5]">
               Pengurangan Risiko Bencana (PRB)
             </span>
-            <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-text-secondary mt-4">
+            <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-text-secondary mt-4 leading-tight">
               Tahun 2026
             </span>
           </h2>

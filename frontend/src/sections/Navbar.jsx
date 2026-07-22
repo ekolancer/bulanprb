@@ -30,8 +30,8 @@ export const Navbar = () => {
 
   const navLinks = [
     { label: 'Beranda', href: '/' },
-    { label: 'Rundown Acara', href: '/rundown' },
-    { label: 'Akomodasi', href: '/akomodasi' },
+    { label: 'Informasi Acara', href: '/rundown' },
+    // { label: 'Akomodasi', href: '/akomodasi' },
     { label: 'Media Center', href: '/media-center' },
   ];
 

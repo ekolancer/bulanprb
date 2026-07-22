@@ -42,8 +42,8 @@ export const PuncakPeringatan = () => {
             <span className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary bg-primary/[0.06] ring-1 ring-primary/15 w-fit mx-auto">
               Kaleidoskop
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-text-primary tracking-tight leading-[1.08] text-balance">
-              Puncak Peringatan Bulan PRB 2026
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent tracking-tight leading-[1.5] pb-2 text-balance">
+              Peringatan Bulan PRB 2026
             </h2>
 
             {/* Paragraph - same 672px constraint */}
