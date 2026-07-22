@@ -19,7 +19,7 @@ function App() {
         Lewati ke konten utama
       </a>
 
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="min-h-screen bg-app-gradient flex flex-col">
         <Navbar />
 
         <main id="main-content" className="flex-grow" tabIndex={-1}>

@@ -21,7 +21,7 @@ export const GaleriFoto = () => {
     <section
       id="galeri-foto"
       aria-label="Galeri foto Bulan PRB 2026"
-      className="relative py-24 sm:py-32 lg:py-40 bg-background overflow-hidden"
+      className="relative py-24 sm:py-32 lg:py-40 bg-app-gradient overflow-hidden"
     >
       {/* Ambient glow */}
       <div

@@ -221,7 +221,7 @@ export const RundownKegiatan = () => {
     <section
       id="rundown"
       aria-label="Rundown kegiatan Bulan PRB 2026"
-      className="py-20 sm:py-24 lg:py-28 bg-[#f8fafc] relative overflow-hidden"
+      className="py-20 sm:py-24 lg:py-28 bg-app-gradient relative overflow-hidden"
     >
       {/* Decorative blurred background shapes */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 pointer-events-none" />

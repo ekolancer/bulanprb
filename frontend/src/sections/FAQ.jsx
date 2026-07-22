@@ -57,13 +57,27 @@ export const FAQ = () => {
     <section
       id="faq"
       aria-label="Tanya jawab Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-white"
+      className="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden"
     >
+      {/* Subtle geometric pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          backgroundPosition: '0 0',
+        }}
+        aria-hidden="true"
+      />
+
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          
+
           {/* Left column - Intro & Contact */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -77,7 +91,7 @@ export const FAQ = () => {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight leading-[1.1] text-balance">
                 Tanya jawab seputar Bulan PRB
               </h2>
-              
+
               {/* Supporting paragraph */}
               <p className="text-text-secondary text-base leading-relaxed max-w-md">
                 Temukan jawaban atas pertanyaan umum seputar kegiatan, partisipasi, dan informasi penting Bulan Pengurangan Risiko Bencana 2026.

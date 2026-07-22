@@ -20,7 +20,7 @@ export const RoadToPRB = () => {
     <section
       id="road-to-prb"
       aria-label="Galeri Road to PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-background overflow-hidden"
+      className="py-16 sm:py-20 lg:py-24 bg-app-gradient overflow-hidden"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 

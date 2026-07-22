@@ -5,7 +5,7 @@ import { koboFormUrl, koboDashboardUrl } from '../data';
 
 export const GerakanPRB = () => {
   return (
-    <section id="gerakan" className="py-20 sm:py-28 bg-background relative overflow-hidden">
+    <section id="gerakan" className="py-20 sm:py-28 bg-app-gradient relative overflow-hidden">
       {/* Decorative blurred background shape */}
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-accent-orange/5 rounded-full blur-3xl -translate-y-1/2 pointer-events-none" />
 

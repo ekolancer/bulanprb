@@ -23,36 +23,36 @@ const FlipDigit = ({ value, label }) => {
 
   return (
     <div
-      className="flex flex-col items-center gap-2 sm:gap-3"
+      className="flex flex-col items-center gap-1.5 sm:gap-3"
       aria-label={`${value} ${label}`}
     >
       {/* Card */}
       <div
-        className="relative w-16 h-20 sm:w-20 sm:h-24 lg:w-24 lg:h-28"
+        className="relative w-14 h-[4.5rem] xs:w-16 xs:h-20 sm:w-20 sm:h-24 lg:w-24 lg:h-28"
         style={{ perspective: '600px' }}
         aria-hidden="true"
       >
         {/* Static base */}
-        <div className="absolute inset-0 rounded-2xl bg-white shadow-soft-lg border border-slate-100/80 flex items-center justify-center overflow-hidden">
-          <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tabular-nums select-none leading-none font-mono">
+        <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-white/15 backdrop-blur-md shadow-soft-lg border border-white/25 flex items-center justify-center overflow-hidden">
+          <span className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tabular-nums select-none leading-none font-mono">
             {current}
           </span>
           {/* Center separator */}
-          <div className="absolute inset-x-0 top-1/2 h-px bg-slate-100 z-10" />
+          <div className="absolute inset-x-0 top-1/2 h-px bg-white/20 z-10" />
           {/* Subtle top highlight */}
-          <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
         </div>
 
         {/* Flip flap — old value folds away */}
         {flipping && (
           <motion.div
-            className="absolute inset-x-0 top-0 h-1/2 rounded-t-2xl bg-white border border-slate-100 border-b-0 flex items-end justify-center overflow-hidden origin-bottom z-20"
+            className="absolute inset-x-0 top-0 h-1/2 rounded-t-xl sm:rounded-t-2xl bg-white/15 backdrop-blur-md border border-white/25 border-b-0 flex items-end justify-center overflow-hidden origin-bottom z-20"
             initial={{ rotateX: 0 }}
             animate={{ rotateX: -90 }}
             transition={{ duration: 0.26, ease: 'easeIn' }}
             style={{ backfaceVisibility: 'hidden' }}
           >
-            <span className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tabular-nums select-none leading-none pb-0.5 font-mono">
+            <span className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tabular-nums select-none leading-none pb-0.5 font-mono">
               {prev}
             </span>
           </motion.div>
@@ -60,7 +60,7 @@ const FlipDigit = ({ value, label }) => {
       </div>
 
       {/* Label */}
-      <span className="text-[10px] sm:text-xs font-bold text-text-secondary uppercase tracking-[0.15em]">
+      <span className="text-[9px] xs:text-[10px] sm:text-xs font-bold text-white/85 uppercase tracking-[0.1em] sm:tracking-[0.15em]">
         {label}
       </span>
     </div>
@@ -112,11 +112,11 @@ export const Countdown = () => {
     <section
       id="countdown"
       aria-label="Countdown menuju acara puncak Bulan PRB 2026"
-      className="relative min-h-[100dvh] flex items-center py-20 sm:py-24 lg:py-28 bg-white overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center py-16 xs:py-20 sm:py-24 lg:py-28 bg-[#033b80] overflow-hidden"
     >
       {/* Subtle geometric pattern background */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.06] text-white"
         style={{
           backgroundImage: `
             linear-gradient(to right, currentColor 1px, transparent 1px),
@@ -138,14 +138,20 @@ export const Countdown = () => {
           transition={{ duration: 0.55, ease: 'easeOut' }}
           className="flex flex-col items-center text-center mb-14 sm:mb-16"
         >
-          <h2 className="flex flex-col tracking-tight">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-secondary leading-tight">
+          <h2 className="flex flex-col tracking-wider px-2">
+            <span
+              className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-extrabold bg-clip-text text-transparent uppercase leading-relaxed"
+              style={{ backgroundImage: 'linear-gradient(90deg, #ff9800 0%, #f44336 100%)' }}
+            >
               Peringatan Bulan
             </span>
-            <span className="text-4xl sm:text-5xl lg:text-5xl font-extrabold bg-gradient-to-r from-primary to-accent-orange bg-clip-text text-transparent mt-4 pb-2 leading-[2.5]">
+            <span className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-3 sm:mt-4 pb-2 leading-relaxed uppercase" style={{ color: '#fcf3e3' }}>
               Pengurangan Risiko Bencana (PRB)
             </span>
-            <span className="text-xl sm:text-2xl lg:text-3xl font-semibold text-text-secondary mt-4 leading-tight">
+            <span
+              className="text-lg xs:text-xl sm:text-2xl lg:text-3xl font-extrabold bg-clip-text text-transparent mt-3 sm:mt-4 leading-relaxed uppercase"
+              style={{ backgroundImage: 'linear-gradient(90deg, #ff9800 0%, #f44336 100%)' }}
+            >
               Tahun 2026
             </span>
           </h2>
@@ -159,13 +165,15 @@ export const Countdown = () => {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center gap-3 mb-14 sm:mb-16"
         >
-          <Quote
-            className="w-7 h-7 text-primary/25 fill-primary/10"
-            strokeWidth={1.5}
-            aria-hidden="true"
-          />
-          <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-text-secondary italic tracking-tight max-w-xl">
-            "Ngariksa Bumi Banten"
+          <div className="flex items-center justify-center w-11 h-11 xs:w-14 xs:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+            <Quote
+              className="w-5 h-5 xs:w-6 xs:h-6 text-white/80 fill-white/20"
+              strokeWidth={1.5}
+              aria-hidden="true"
+            />
+          </div>
+          <p className="text-base xs:text-lg sm:text-xl lg:text-2xl font-semibold text-white italic tracking-wider max-w-xl px-4">
+            "NGARIKSA BUMI BANTEN"
           </p>
         </motion.div>
 
@@ -183,15 +191,15 @@ export const Countdown = () => {
               role="timer"
               aria-live="off"
               aria-label={`${timeLeft.days} hari ${timeLeft.hours} jam ${timeLeft.minutes} menit ${timeLeft.seconds} detik menuju acara`}
-              className="flex items-end justify-center gap-4 sm:gap-6 lg:gap-8"
+              className="flex items-end justify-center gap-2 xs:gap-3 sm:gap-6 lg:gap-8"
             >
               {units.map((unit, i) => (
                 <React.Fragment key={unit.label}>
                   <FlipDigit value={unit.value} label={unit.label} />
                   {i < units.length - 1 && (
-                    <div className="flex flex-col gap-2 pb-8 shrink-0" aria-hidden="true">
-                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                      <div className="w-1.5 h-1.5 rounded-full bg-slate-300" />
+                    <div className="flex flex-col gap-1.5 sm:gap-2 pb-6 sm:pb-16 shrink-0" aria-hidden="true">
+                      <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/60" />
+                      <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-white/60" />
                     </div>
                   )}
                 </React.Fragment>

@@ -101,7 +101,7 @@ export const Akomodasi = () => {
     <section
       id="akomodasi"
       aria-label="Rekomendasi akomodasi peserta Bulan PRB 2026"
-      className="py-16 sm:py-20 lg:py-24 bg-white"
+      className="py-16 sm:py-20 lg:py-24 bg-app-gradient"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 

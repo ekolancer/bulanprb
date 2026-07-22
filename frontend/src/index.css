@@ -19,9 +19,9 @@
   }
 
   body {
-    @apply bg-background text-text-primary font-sans antialiased;
+    @apply text-text-primary font-sans antialiased;
     /* Slight warm tint on background — not pure cold gray */
-    background-color: #f7f9fa;
+    background-image: linear-gradient(120deg, #eac3ab, #97bfe7);
   }
 
   /* ── Premium focus ring ── */
@@ -58,6 +58,11 @@
 
 /* ── Components ────────────────────────────────────────────────────────── */
 @layer components {
+  /* App background gradient — replaces flat bg-background */
+  .bg-app-gradient {
+    background-image: linear-gradient(120deg, #eac3ab, #97bfe7);
+  }
+
   /* Skip to content — accessibility */
   .skip-to-content {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-3 focus:rounded-xl focus:bg-primary focus:text-white focus:font-semibold focus:text-sm focus:shadow-soft-lg;

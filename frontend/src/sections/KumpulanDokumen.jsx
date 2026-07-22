@@ -15,7 +15,7 @@ export const KumpulanDokumen = () => {
     <section
       id="dokumen"
       aria-label="Kumpulan dokumen Bulan PRB 2026"
-      className="relative py-24 sm:py-32 lg:py-40 bg-background overflow-hidden"
+      className="relative py-24 sm:py-32 lg:py-40 bg-app-gradient overflow-hidden"
     >
 
       <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">

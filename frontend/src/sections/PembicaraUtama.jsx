@@ -43,7 +43,7 @@ export const PembicaraUtama = () => {
     <section
       id="pembicara"
       aria-label="Pembicara utama Bulan PRB 2026"
-      className="py-24 sm:py-32 lg:py-40 bg-background"
+      className="py-24 sm:py-32 lg:py-40 bg-app-gradient"
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
