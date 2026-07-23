@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { AdminIcon } from '../components/AdminIcon';
+import { Button } from '../components/Button';
+import { adminPanelUrl } from '../data';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -98,8 +101,19 @@ export const Navbar = () => {
             })}
           </ul>
 
-          {/* Spacer to keep navigation centered and prevent shifting */}
-          <div className="hidden md:block w-[114px] shrink-0" aria-hidden="true" />
+          {/* ── Right side: admin login + mobile hamburger ── */}
+          <div className="hidden md:flex items-center w-[114px] justify-end shrink-0">
+            <a
+              href={adminPanelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Login Admin — membuka tab baru"
+              title="Login Admin"
+              className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:scale-105 transition-transform duration-200"
+            >
+              <AdminIcon className="w-9 h-9" />
+            </a>
+          </div>
 
           {/* ── Mobile hamburger ── */}
           <button
@@ -150,7 +164,17 @@ export const Navbar = () => {
                   </li>
                 ))}
               </ul>
-              <div className="pt-2 border-t border-slate-100 mt-1">
+              <div className="pt-2 border-t border-slate-100 mt-1 flex flex-col gap-2">
+                <a
+                  href={adminPanelUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 py-2.5 px-3 rounded-xl text-sm font-semibold text-text-secondary hover:bg-slate-50 hover:text-primary transition-colors"
+                >
+                  <AdminIcon className="w-7 h-7 shrink-0" />
+                  Login Admin
+                </a>
                 <Link to="/" onClick={() => setIsMobileMenuOpen(false)} tabIndex={-1}>
                   <Button variant="primary" className="w-full">Daftar Aksi</Button>
                 </Link>

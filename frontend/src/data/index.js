@@ -21,3 +21,4 @@ export * from './rundownData';
 export * from './speakerData';
 export * from './akomodasiData';
 export * from './mediaCenterData';
+export * from './adminData';
