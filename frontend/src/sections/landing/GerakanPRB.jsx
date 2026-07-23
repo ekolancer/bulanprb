@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '../components/Button';
-import { koboFormUrl, koboDashboardUrl } from '../data';
+import { Button } from '../../components/Button';
+import { koboFormUrl, koboDashboardUrl } from '../../data';
 
 export const GerakanPRB = () => {
   return (

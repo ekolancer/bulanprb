@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, MapPin, ChevronDown } from 'lucide-react';
-import { rundownSchedule, rundownDays } from '../data';
+import { rundownSchedule, rundownDays } from '../../data';
 
 const CardContent = ({ item, expanded, setExpanded, triggerId, panelId }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });

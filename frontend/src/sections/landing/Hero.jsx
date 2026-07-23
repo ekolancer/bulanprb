@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import heroBg from '../assets/hero.png';
 
 // ─── Scroll indicator ─────────────────────────────────────────────────────
 const ScrollIndicator = ({ onClick }) => (

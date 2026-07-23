@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { AdminIcon } from '../components/AdminIcon';
-import { Button } from '../components/Button';
-import { adminPanelUrl } from '../data';
+import { AdminIcon } from '../../components/AdminIcon';
+import { Button } from '../../components/Button';
+import { adminPanelUrl } from '../../data';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +34,6 @@ export const Navbar = () => {
   const navLinks = [
     { label: 'Beranda', href: '/' },
     { label: 'Informasi Acara', href: '/rundown' },
-    // { label: 'Akomodasi', href: '/akomodasi' },
     { label: 'Media Center', href: '/media-center' },
   ];
 

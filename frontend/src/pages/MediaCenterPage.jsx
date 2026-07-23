@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GaleriFoto } from '../sections/GaleriFoto';
-import { TwibbonAjakan } from '../sections/TwibbonAjakan';
-import { KumpulanDokumen } from '../sections/KumpulanDokumen';
+import { GaleriFoto } from '../sections/media-center/GaleriFoto';
+import { TwibbonAjakan } from '../sections/media-center/TwibbonAjakan';
+import { KumpulanDokumen } from '../sections/media-center/KumpulanDokumen';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 12 },

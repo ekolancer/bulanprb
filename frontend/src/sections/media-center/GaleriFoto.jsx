@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Expand, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { galeriFotoData } from '../data';
+import { galeriFotoData } from '../../data';
 
 const sizeToSpan = {
   tall: 'row-span-2',

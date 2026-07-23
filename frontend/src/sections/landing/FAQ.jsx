@@ -1,7 +1,7 @@
 import React, { useState, useId } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, MessageCircle } from 'lucide-react';
-import { faqItems } from '../data';
+import { faqItems } from '../../data';
 
 const FAQItem = ({ item, isOpen, onToggle, panelId, triggerId }) => (
   <div className="bg-white rounded-2xl shadow-soft border border-slate-100/80 overflow-hidden transition-all duration-200 hover:border-primary/20 hover:shadow-soft-hover">

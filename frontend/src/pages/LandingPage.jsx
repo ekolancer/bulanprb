@@ -1,12 +1,12 @@
 import React from 'react';
-import { Hero } from '../sections/Hero';
-import { Countdown } from '../sections/Countdown';
-import { GerakanPRB } from '../sections/GerakanPRB';
-import { PuncakPeringatan } from '../sections/PuncakPeringatan';
-import { RoadToPRB } from '../sections/RoadToPRB';
-import { PRBTahunKeTahun } from '../sections/PRBTahunKeTahun';
-import { FAQ } from '../sections/FAQ';
-import { MitraSponsor } from '../sections/MitraSponsor';
+import { Hero } from '../sections/landing/Hero';
+import { Countdown } from '../sections/landing/Countdown';
+import { GerakanPRB } from '../sections/landing/GerakanPRB';
+import { PuncakPeringatan } from '../sections/landing/PuncakPeringatan';
+import { RoadToPRB } from '../sections/landing/RoadToPRB';
+import { PRBTahunKeTahun } from '../sections/landing/PRBTahunKeTahun';
+import { FAQ } from '../sections/landing/FAQ';
+import { MitraSponsor } from '../sections/landing/MitraSponsor';
 import { motion } from 'framer-motion';
 
 export const LandingPage = () => {

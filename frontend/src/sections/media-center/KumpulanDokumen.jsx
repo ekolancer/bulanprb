@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FileText, FileSpreadsheet, FileArchive, Download } from 'lucide-react';
-import { dokumenData } from '../data';
+import { dokumenData } from '../../data';
 
 const typeIcon = {
   PDF: FileText,

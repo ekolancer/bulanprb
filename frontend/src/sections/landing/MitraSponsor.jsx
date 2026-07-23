@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { mitraUtama, mitraStrategis, allMitra } from '../data';
+import { mitraUtama, mitraStrategis, allMitra } from '../../data';
 
 export const MitraSponsor = () => {
   // Duplicate for seamless marquee loop

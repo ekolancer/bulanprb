@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { RundownKegiatan } from '../sections/RundownKegiatan';
-import { SharingSession } from '../sections/SharingSession';
-import { PembicaraUtama } from '../sections/PembicaraUtama';
-import { ShuttleBus } from '../sections/ShuttleBus';
-import { Akomodasi } from '../sections/Akomodasi';
+import { RundownKegiatan } from '../sections/rundown/RundownKegiatan';
+import { SharingSession } from '../sections/rundown/SharingSession';
+import { PembicaraUtama } from '../sections/rundown/PembicaraUtama';
+import { ShuttleBus } from '../sections/rundown/ShuttleBus';
+import { Akomodasi } from '../sections/rundown/Akomodasi';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 12 },

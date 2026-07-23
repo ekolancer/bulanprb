@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin } from 'lucide-react';
-import { Lightbox } from '../components/Lightbox';
-import { prbHistory } from '../data';
+import { Lightbox } from '../../components/Lightbox';
+import { prbHistory } from '../../data';
 
 export const PRBTahunKeTahun = () => {
   const [selectedYear, setSelectedYear] = useState(prbHistory[0].year);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Bus, Phone } from 'lucide-react';
-import { shuttleSchedule, shuttleDays } from '../data';
+import { shuttleSchedule, shuttleDays } from '../../data';
 
 export const ShuttleBus = () => {
   const [activeDay, setActiveDay] = useState(shuttleDays[1]);

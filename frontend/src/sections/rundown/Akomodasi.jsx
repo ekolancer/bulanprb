@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Phone, Building, ArrowUpDown, SlidersHorizontal } from 'lucide-react';
-import { hotels, hotelCategories, sortOptions } from '../data';
+import { hotels, hotelCategories, sortOptions } from '../../data';
 
 const HotelCard = ({ hotel, delay }) => (
   <motion.article

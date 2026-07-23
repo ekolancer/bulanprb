@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Card } from '../components/Card';
+import { Card } from '../../components/Card';
 import { Clock, MapPin, Tag, User } from 'lucide-react';
-import { sharingSessions, pembicara, rundownDays } from '../data';
+import { sharingSessions, pembicara, rundownDays } from '../../data';
 
 const SESSION_DAY_ALL = 'Semua';
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navbar } from './sections/Navbar';
+import { Navbar } from './sections/layout/Navbar';
 import { LandingPage } from './pages/LandingPage';
 import { RundownPage } from './pages/RundownPage';
-import { AkomodasiPage } from './pages/AkomodasiPage';
 import { MediaCenterPage } from './pages/MediaCenterPage';
-import { Footer } from './sections/Footer';
+import { Footer } from './sections/layout/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { BackToTop } from './components/BackToTop';
 
@@ -26,7 +25,6 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/rundown" element={<RundownPage />} />
-            {/* <Route path="/akomodasi" element={<AkomodasiPage />} /> */}
             <Route path="/media-center" element={<MediaCenterPage />} />
           </Routes>
         </main>

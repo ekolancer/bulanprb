@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { pembicara } from '../data';
+import { pembicara } from '../../data';
 
 const TeamBlock = ({ speaker, delay = 0 }) => (
   <motion.div

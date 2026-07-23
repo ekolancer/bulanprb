@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, MapPin, Calendar } from 'lucide-react';
-import { Lightbox } from '../components/Lightbox';
-import { roadToPRBItems } from '../data';
+import { Lightbox } from '../../components/Lightbox';
+import { roadToPRBItems } from '../../data';
 
 export const RoadToPRB = () => {
   const [lightboxIndex, setLightboxIndex] = useState(null);
