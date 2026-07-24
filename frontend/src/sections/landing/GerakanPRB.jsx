@@ -40,7 +40,7 @@ export const GerakanPRB = () => {
               onClick={() => window.open(koboFormUrl, '_blank', 'noopener noreferrer')}
               aria-label="Daftar Gerakan PRB — membuka tab baru"
             >
-              Daftar Gerakan PRB
+              Gabung Gerakan PRB
             </Button>
           </motion.div>
 
@@ -66,7 +66,7 @@ export const GerakanPRB = () => {
                 </div>
               </div>
               <p className="text-text-secondary text-xs font-medium mt-3 text-center">
-                Data statistik pendaftaran diperbarui secara real-time.
+                Data partisipasi Gerakan PRB.
               </p>
             </div>
           </motion.div>

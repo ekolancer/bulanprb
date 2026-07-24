@@ -20,8 +20,21 @@ export const RoadToPRB = () => {
     <section
       id="road-to-prb"
       aria-label="Galeri Road to PRB 2026"
-      className="min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24 bg-app-gradient overflow-hidden"
+      className="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden"
     >
+      {/* Subtle geometric pattern background */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          backgroundPosition: '0 0',
+        }}
+        aria-hidden="true"
+      />
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

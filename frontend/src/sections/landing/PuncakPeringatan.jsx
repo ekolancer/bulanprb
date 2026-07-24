@@ -9,7 +9,8 @@ export const PuncakPeringatan = () => {
     <section
       id="puncak"
       aria-label="Puncak Peringatan Bulan PRB 2026"
-      className="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden"
+      // className="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden"
+      className="min-h-screen flex flex-col justify-center py-16 sm:py-20 lg:py-24 bg-app-gradient overflow-hidden"
     >
       {/* Subtle geometric pattern background */}
       <div

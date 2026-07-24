@@ -23,10 +23,10 @@ export const LandingPage = () => {
         <GerakanPRB />
       </motion.div>
       <motion.div variants={pageVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-100px' }}>
-        <PuncakPeringatan />
+        <RoadToPRB />
       </motion.div>
       <motion.div variants={pageVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-100px' }}>
-        <RoadToPRB />
+        <PuncakPeringatan />
       </motion.div>
       <motion.div variants={pageVariants} initial="initial" whileInView="animate" viewport={{ once: true, margin: '-100px' }}>
         <PRBTahunKeTahun />
